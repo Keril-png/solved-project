@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    Задачи пользователя {{user.get_full_name}}
+{% endblock %}
+
+{% block content %}
+    {% comment %} <div class="container py-5">     
+        <h1>Последние обновления на сайте</h1>
+        {% for problem in page %}
+            {% include 'includes/problem_card.html' %}
+        {% endfor %}
+        {% include 'includes/paginator.html' %}
+    </div>   {% endcomment %}
+
+
+
+
+    <div class="container py-5">        
+        <h1>{{user.get_full_name}}</h1>
+        <h3>Всего задач: {{user.problems.count}}</h3>   
+                   
+        <hr>
+    {% for problem in page %}
+            {% include 'includes/problem_card.html' %}
+        {% endfor %}
+    {% include 'includes/paginator.html' %}
+    </div>
+
+{% endblock %}

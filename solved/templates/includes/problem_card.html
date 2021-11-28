@@ -1,0 +1,18 @@
+
+<article>
+  <h3><a href={% url 'problem_detail' problem.id%}>{{ problem.title }}</a></h3>      
+  <p>
+    {{ problem.description }}
+  </p>
+    <ul>
+    <li>
+      Автор: <a href={% url 'profile' problem.author%}>{{ problem.author.get_full_name }}</a>
+    </li>
+    <li>
+      {{ problem.pub_date|date:"j F Y"  }}
+    </li>
+    
+  </ul>
+  
+</article>
+<hr>
